@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400&display=swap');
 :root {
   --delay-first: 0.2s;
   --delay-second: 2s;
@@ -15,16 +14,57 @@
   font-family: 'Montserrat', sans-serif;
 }
 
+body {
+  background-color: #fbeeac;
+}
+
+nav {
+  display: flex;
+  justify-content: space-evenly;
+  height: 10vh;
+  text-align: center;
+  margin-top: 40px;
+  font-size: 2em;
+  font-weight: 400;
+}
+
+nav a {
+  text-decoration: none;
+  color: #28527a;
+}
+
 #letters-grid, #name-grid {
   display: grid;
   grid-template-columns: 1fr;
   grid-row-gap: 0px;
-  position: relative;
+  position: absolute;
   margin: auto;
   width: 100%;
   top: 30vh;
 }
 
+#name-grid {
+  position: absolute;
+  text-align: left;
+  z-index: 1;
+  grid-template-rows: 90px 150px 100px;
+  width: 250px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  padding-left: 40px;
+}
+
+.name-text {
+  user-select: none;
+  align-self: end;
+  opacity: 0;
+  font-size: 4em;
+  font-weight: 200;
+  text-transform: uppercase;
+}
+
+/* creating the circles */
 .circle-container {
   width: 100px;
   height: 100px;
@@ -38,11 +78,11 @@
   height: 100%;
   clip: rect(0px, 100px, 100px, 50px);
   border-radius: 100%;
-  background-color: #fff;
+  background-color: #fbeeac;
 }
 
 .fill {
-  background-color: blue;
+  background-color: #28527a;
   position: absolute;
   width: 100%;
   height: 100%;
@@ -50,6 +90,7 @@
   clip: rect(0px, 50px, 100px, 0px);
 }
 
+/* animations */
 .left .fill {
   z-index: 1;
   -webkit-animation: left-circle var(--anim-circle-length) linear;
@@ -139,7 +180,7 @@
   }
 
   100% {
-    transform: translate(-150px, -100px);
+    transform: translate(-130px, -100px);
   }
 }
 
@@ -162,7 +203,7 @@
   }
 
   100% {
-    transform: translate(-200px, 100px);
+    transform: translate(-180px, 100px);
   }
 }
 
@@ -182,38 +223,26 @@
   }
 
   50% {
-    transform: translate(0px, 200px);
+    transform: translate(0px, 100px);
   }
 
   100% {
-    transform: translate(-200px, 200px);
+    transform: translate(-180px, 180px);
   }
 }
 
-
-
-#name-grid {
-  position: absolute;
-  text-align: left;
-  z-index: 1;
-  grid-template-rows: 100px 200px 100px;
-  width: 300px;
-  left: 0;
-  right: 0;
-  margin: auto;
-  padding-left: 40px;
-}
-
-.name-text {
-  user-select: none;
-  align-self: end;
-  opacity: 0;
-  font-size: 4em;
-  text-transform: uppercase;
+.name-text, nav a {
   -webkit-animation: fadeInDown var(--anim-name-length);
   -moz-animation: fadeInDown var(--anim-name-length);
   animation: fadeInDown var(--anim-name-length) both;
   -webkit-animation-delay: var(--delay-third);
   -moz-animation-delay: var(--delay-third);
   animation-delay: var(--delay-third);
+}
+
+#section-about, #section-contact {
+  opacity: 0;
+  animation-fill-mode: both;
+  text-align: center;
+  margin: 100px;
 }
