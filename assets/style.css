@@ -6,6 +6,8 @@
   --anim-circle-length: 0.2s;
   --anim-split-length: 2s;
   --anim-name-length: 1.5s;
+  --main-color: #28527a;
+  --background-color: #fbeeac;
 }
 
 * {
@@ -15,7 +17,7 @@
 }
 
 body {
-  background-color: #fbeeac;
+  background-color: var(--background-color);
 }
 
 nav {
@@ -64,6 +66,7 @@ nav a {
   text-transform: uppercase;
 }
 
+
 /* creating the circles */
 .circle-container {
   width: 100px;
@@ -78,17 +81,18 @@ nav a {
   height: 100%;
   clip: rect(0px, 100px, 100px, 50px);
   border-radius: 100%;
-  background-color: #fbeeac;
+  background-color: var(--background-color);
 }
 
 .fill {
-  background-color: #28527a;
+  background-color: var(--main-color);
   position: absolute;
   width: 100%;
   height: 100%;
   border-radius: 100%;
   clip: rect(0px, 50px, 100px, 0px);
 }
+
 
 /* animations */
 .left .fill {
