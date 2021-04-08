@@ -218,7 +218,7 @@ nav a {
 }
 
 .circle-container.bottom {
-  top: -200px;
+  top: -100px;
   -webkit-animation: bottom-split var(--anim-split-length) ease;
   -moz-animation: bottom-split var(--anim-split-length) ease;
   animation: bottom-split var(--anim-split-length) ease both;
@@ -233,21 +233,17 @@ nav a {
   }
 
   50% {
-    transform: translate(0px, 50px);
+    transform: translate(0px, -50px);
   }
 
   100% {
-    transform: translate(-120px, 50px);
+    transform: translate(-120px, -50px);
   }
 }
 
 .rectangle-container {
   top: -100px;
-  /* top: -50px;
-  left: -125px; */
   opacity: 0;
-  /* animation: bounceIn 0.5s both;
-  animation-delay: 3.7s; */
   -webkit-animation: rectangle-split var(--anim-split-length) ease;
   -moz-animation: rectangle-split var(--anim-split-length) ease;
   animation: rectangle-split var(--anim-split-length) ease both;
@@ -258,18 +254,25 @@ nav a {
 
 @keyframes rectangle-split {
   0% {
-    transform: translate(0px, 0px);
+    transform: translate(0px, 100px);
     opacity: 0;
+    height: 100px;
+  }
+
+  1% {
+    opacity: 1;
   }
 
   50% {
     transform: translate(0px, 50px);
     opacity: 1;
+    height: 200px;
   }
 
   100% {
     transform: translate(-125px, 50px);
     opacity: 1;
+    height: 200px;
   }
 }
 
