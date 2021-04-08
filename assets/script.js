@@ -1,57 +1,53 @@
-$(document).ready(function(){
+$(document).ready(function () {
 
-    var sectionOpen = false;
-    var aboutOpen = false;
-    var contactOpen = false;
+    var active = 'active-nav'
 
-    function open(section){
-        $(section).addClass("animate__animated animate__fadeInDown").one('animationend webkitAnimationEnd oAnimationEnd', function() {
-        });
-        sectionOpen = true;
-    }
+    //@@@@@ TO DO - fix active highlight when clicking on navigation links
 
-    function close(section){
-        $(section).addClass("animate__animated animate__fadeOutDown").one('animationend webkitAnimationEnd oAnimationEnd', function() {
-            $(section).removeClass();
-        });
-        sectionOpen = false;
-    }
+    var waypoint = new Waypoint({
+        element: $('#about'),
+        handler: function (direction) {
+            if (direction == 'up') {
+                $('.links').removeClass(active);
+                $('nav').removeClass('side-nav');
+                // $('#splash').show();
+            } else {
+                // $('#splash').hide();
+                $('nav').addClass('side-nav');
+                $('.links').removeClass(active);
+                $('#link-about').addClass(active);
+            }
+        },
+        offset: '50%'
+    })
 
-    $("#js-about").click(function(){
-        if(sectionOpen == false) {
-            open("#section-about");
-            $("#splash").hide(500);
-            aboutOpen = true;
-        }
-        else if (contactOpen == true) {
-            close("#section-contact");
-            open("#section-about");
-            contactOpen = false;
-            aboutOpen = true;
-        }
-        else{
-            close("#section-about");
-            $("#splash").show();
-            aboutOpen = false;
-        }
-    });
+    var waypoint2 = new Waypoint({
+        element: $('#work'),
+        handler: function (direction) {
+            if (direction == 'up') {
+                $('.links').removeClass(active);
+                $('#link-about').addClass(active);
+            } else {
+                $('.links').removeClass(active);
+                $('#link-work').toggleClass(active);
+            }
+        },
+        offset: '50%'
+    })
 
-    $("#js-contact").click(function(){
-        if(sectionOpen == false) {
-            open("#section-contact");
-            $("#splash").hide(500);
-            contactOpen = true;
-        }
-        else if (aboutOpen == true) {
-            close("#section-about");
-            open("#section-contact");
-            aboutOpen = false;
-            contactOpen = true;
-        }
-        else{
-            close("#section-contact");
-            $("#splash").show();
-            contactOpen = false;
-        }
-    });
+    var waypoint3 = new Waypoint({
+        element: $('#contact'),
+        handler: function (direction) {
+            $('.links').removeClass(active);
+            $('#link-contact').toggleClass(active);
+            if (direction == 'up') {
+                $('.links').removeClass(active);
+                $('#link-work').addClass(active);
+            } else {
+            }
+        },
+        offset: '50%'
+    })
+
+
 })
