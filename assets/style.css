@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;700&display=swap');
+
 :root {
   --delay-first: 0.2s;
   --delay-second: 2s;
@@ -8,6 +9,7 @@
   --anim-name-length: 1.5s;
   --main-color: #28527a;
   --background-color: #fbeeac;
+  --accent-color: #59c9a6;
 }
 
 * {
@@ -38,7 +40,7 @@ nav a {
 #letters-grid, #name-grid {
   display: grid;
   grid-template-columns: 1fr;
-  grid-row-gap: 0px;
+  row-gap: 0px;
   position: absolute;
   margin: auto;
   width: 100%;
@@ -49,7 +51,7 @@ nav a {
   position: absolute;
   text-align: left;
   z-index: 1;
-  grid-template-rows: 90px 150px 100px;
+  grid-template-rows: 150px 10px 100px;
   width: 250px;
   left: 0;
   right: 0;
@@ -62,8 +64,12 @@ nav a {
   align-self: end;
   opacity: 0;
   font-size: 4em;
-  font-weight: 200;
-  text-transform: uppercase;
+  font-weight: 700;
+  padding: 0;
+}
+
+.name-text.bottom {
+  padding-left: 45px;
 }
 
 
@@ -71,6 +77,13 @@ nav a {
 .circle-container {
   width: 100px;
   height: 100px;
+  margin: auto;
+  position: relative;
+}
+
+.rectangle-container {
+  width: 10px;
+  height: 200px;
   margin: auto;
   position: relative;
 }
@@ -91,6 +104,13 @@ nav a {
   height: 100%;
   border-radius: 100%;
   clip: rect(0px, 50px, 100px, 0px);
+}
+
+.fill-rectangle {
+  background-color: var(--main-color);
+  position: absolute;
+  width: 100%;
+  height: 100%;
 }
 
 
@@ -133,10 +153,10 @@ nav a {
   z-index: 3;
   -webkit-animation: right-circle var(--anim-circle-length) linear;
   -moz-animation: right-circle var(--anim-circle-length) linear;
-  animation: right-circle var(--anim-circle-length) linear both;
+  animation: right-circle var(--anim-circle-length) linear both, color-change var(--anim-split-length) ease both;
   -webkit-animation-delay: var(--delay-first);
   -moz-animation-delay: var(--delay-first);
-  animation-delay: var(--delay-first);
+  animation-delay: var(--delay-first), var(--delay-second);
 }
 
 @keyframes right-circle {
@@ -156,6 +176,15 @@ nav a {
 
   100% {
     -webkit-transform: rotate(180deg);
+  }
+}
+
+@keyframes color-change {
+  50% {
+    background-color: var(--accent-color);
+  }
+  100% {
+    background-color: var(--accent-color);
   }
 }
 
@@ -180,15 +209,16 @@ nav a {
   }
 
   50% {
-    transform: translate(0px, -100px);
+    transform: translate(0px, -50px);
   }
 
   100% {
-    transform: translate(-130px, -100px);
+    transform: translate(-130px, -50px);
   }
 }
 
 .circle-container.bottom {
+  top: -200px;
   -webkit-animation: bottom-split var(--anim-split-length) ease;
   -moz-animation: bottom-split var(--anim-split-length) ease;
   animation: bottom-split var(--anim-split-length) ease both;
@@ -203,41 +233,49 @@ nav a {
   }
 
   50% {
-    transform: translate(0px, 100px);
+    transform: translate(0px, 50px);
   }
 
   100% {
-    transform: translate(-180px, 100px);
+    transform: translate(-120px, 50px);
   }
 }
 
-.circle-container.bottom.second {
+.rectangle-container {
   top: -100px;
-  -webkit-animation: bottom-split-second var(--anim-split-length) ease;
-  -moz-animation: bottom-split-second var(--anim-split-length) ease;
-  animation: bottom-split-second var(--anim-split-length) ease both;
+  /* top: -50px;
+  left: -125px; */
+  opacity: 0;
+  /* animation: bounceIn 0.5s both;
+  animation-delay: 3.7s; */
+  -webkit-animation: rectangle-split var(--anim-split-length) ease;
+  -moz-animation: rectangle-split var(--anim-split-length) ease;
+  animation: rectangle-split var(--anim-split-length) ease both;
   -webkit-animation-delay: var(--delay-second);
   -moz-animation-delay: var(--delay-second);
   animation-delay: var(--delay-second);
 }
 
-@keyframes bottom-split-second {
+@keyframes rectangle-split {
   0% {
     transform: translate(0px, 0px);
+    opacity: 0;
   }
 
   50% {
-    transform: translate(0px, 100px);
+    transform: translate(0px, 50px);
+    opacity: 1;
   }
 
   100% {
-    transform: translate(-180px, 180px);
+    transform: translate(-125px, 50px);
+    opacity: 1;
   }
 }
 
 .name-text, nav a {
-  -webkit-animation: fadeInDown var(--anim-name-length);
-  -moz-animation: fadeInDown var(--anim-name-length);
+  -webkit-animation: fadeInDown var(--anim-name-length) both;
+  -moz-animation: fadeInDown var(--anim-name-length) both;
   animation: fadeInDown var(--anim-name-length) both;
   -webkit-animation-delay: var(--delay-third);
   -moz-animation-delay: var(--delay-third);
