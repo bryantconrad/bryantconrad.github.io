@@ -8,8 +8,10 @@
   --anim-split-length: 2s;
   --anim-name-length: 1.5s;
   --main-color: #28527a;
-  --background-color: antiquewhite;
+  --background-color: #e4dcc7;
   --accent-color: #59c9a6;
+  --accent-color-2: #D86327;
+  --text-color: #111;
 }
 
 * {
@@ -56,6 +58,7 @@ body {
   font-size: 4em;
   font-weight: 700;
   padding: 0;
+  color: var(--text-color);
 }
 
 .name-text.bottom {
@@ -293,6 +296,7 @@ nav {
   width: min(800px, 50%);
   padding-top: 100px;
   font-size: 20px;
+  color: var(--text-color);
 }
 
 /* nav styling */
@@ -319,7 +323,21 @@ nav a {
   z-index: 3;
 }
 
-/* waypoint changes to nav */
+#project-links {
+  display: flex;
+  flex-flow: column;
+  align-items: flex-start;
+  padding-left: 30px;
+  animation: bounceInLeft 0.5s both;
+}
+
+#project-links a {
+  color: var(--text-color);
+  font-size: 0.7em;
+  padding-top: 10px;
+}
+
+/* waypoint alterations to nav */
 .side-nav {
   flex-flow: column nowrap;
   position: fixed;
@@ -332,10 +350,11 @@ nav a {
   animation-delay: 0s, 0s;
 }
 
+/* nav underline */
 .active-nav,
 nav a:hover {
   background-image: linear-gradient(var(--main-color), var(--main-color)),
-    linear-gradient(var(--background-color), var(--background-color)),
+    linear-gradient(var(--accent-color-2), var(--accent-color-2)),
     linear-gradient(var(--accent-color), var(--accent-color));
   background-size: 20px 2px, 0 2px, 100% 2px;
   background-position: calc(100% + 20px) 100%, 100% 100%, 0 100%;
@@ -352,12 +371,11 @@ nav a:hover {
 
 .logo-show {
   opacity: 1;
-  animation: bounceInDown 0.5s;
+  animation: bounceInLeft 0.5s;
 }
 
 .logo-hide {
-  opacity: 1;
-  animation: bounceOutUp 0.2s both;
+  animation: bounceOutLeft 0.5s both;
 }
 
 
