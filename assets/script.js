@@ -1,8 +1,7 @@
 $(document).ready(function () {
 
+    //set up waypoints
     var active = 'active-nav'
-
-    //@@@@@ TO DO - fix active highlight when clicking on navigation links
 
     var waypoint = new Waypoint({
         element: $('#about'),
@@ -10,15 +9,13 @@ $(document).ready(function () {
             if (direction == 'up') {
                 $('.links').removeClass(active);
                 $('nav').removeClass('side-nav');
-                // $('#splash').show();
             } else {
-                // $('#splash').hide();
                 $('nav').addClass('side-nav');
                 $('.links').removeClass(active);
                 $('#link-about').addClass(active);
             }
         },
-        offset: '50%'
+        offset: '40%'
     })
 
     var waypoint2 = new Waypoint({
@@ -32,7 +29,7 @@ $(document).ready(function () {
                 $('#link-work').toggleClass(active);
             }
         },
-        offset: '50%'
+        offset: '40%'
     })
 
     var waypoint3 = new Waypoint({
@@ -46,8 +43,11 @@ $(document).ready(function () {
             } else {
             }
         },
-        offset: '50%'
+        offset: '40%'
     })
 
+
+    //reset scroll on refresh
+    // history.scrollRestoration = 'manual';
 
 })

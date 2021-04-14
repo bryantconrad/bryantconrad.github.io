@@ -8,7 +8,7 @@
   --anim-split-length: 2s;
   --anim-name-length: 1.5s;
   --main-color: #28527a;
-  --background-color: #fbeeac;
+  --background-color: antiquewhite;
   --accent-color: #59c9a6;
 }
 
@@ -18,11 +18,16 @@
   font-family: 'Montserrat', sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: var(--background-color);
 }
 
-#letters-grid, #name-grid {
+#letters-grid,
+#name-grid {
   display: grid;
   grid-template-columns: 1fr;
   row-gap: 0px;
@@ -168,6 +173,7 @@ body {
   50% {
     background-color: var(--accent-color);
   }
+
   100% {
     background-color: var(--accent-color);
   }
@@ -243,6 +249,7 @@ body {
     opacity: 0;
     height: 100px;
   }
+
   1% {
     opacity: 1;
   }
@@ -260,7 +267,8 @@ body {
   }
 }
 
-.name-text, nav a {
+.name-text,
+nav {
   -webkit-animation: fadeInDown var(--anim-name-length) both;
   -moz-animation: fadeInDown var(--anim-name-length) both;
   animation: fadeInDown var(--anim-name-length) both;
@@ -269,6 +277,7 @@ body {
   animation-delay: var(--delay-third);
 }
 
+/* main content */
 #spacer {
   height: 10vh;
   width: 100%;
@@ -276,14 +285,28 @@ body {
   z-index: 1;
 }
 
+.text-section {
+  margin: auto 30vw;
+  position: relative;
+  top: 100vh;
+  min-height: 100vh;
+  width: min(800px, 50%);
+  padding: 40px;
+  font-size: 20px;
+}
+
+/* nav styling */
 nav {
   display: flex;
-  justify-content: space-evenly;
-  height: 10vh;
-  text-align: center;
+  flex-flow: row wrap;
+  /* justify-content: space-evenly; */
+  /* height: 10vh; */
+  text-align: left;
   margin-top: 40px;
+  margin-left: max(10vw, 30px);
   font-size: 2em;
   font-weight: 400;
+  gap: 10px 30px;
 }
 
 nav a {
@@ -296,37 +319,44 @@ nav a {
   z-index: 3;
 }
 
-/* waypoint changes */
+/* waypoint changes to nav */
 .side-nav {
-  flex-flow: column;
+  flex-flow: column nowrap;
   position: fixed;
   top: 40vh;
-  left: 10vw;
   text-align: left;
+  align-items: flex-start;
+  margin: auto;
+  margin-left: max(10vw, 30px);
+  animation: fadeInDown var(--anim-name-length) backwards, bounceInDown 0.5s;
+  animation-delay: 0s, 0s;
 }
 
-.active-nav {
-  background-image: linear-gradient(#222b40, #222b40),
-  linear-gradient(rgb(176, 251, 188), rgb(176, 251, 188)),
-  linear-gradient(#feb2b2, #feb2b2);
+.active-nav,
+nav a:hover {
+  background-image: linear-gradient(var(--main-color), var(--main-color)),
+    linear-gradient(var(--background-color), var(--background-color)),
+    linear-gradient(var(--accent-color), var(--accent-color));
   background-size: 20px 2px, 0 2px, 100% 2px;
   background-position: calc(100% + 20px) 100%, 100% 100%, 0 100%;
   width: auto;
 }
 
-a:hover {
-  background-size: 20px 2px, 0 2px, 100% 2px;
-  background-position: calc(100% + 20px) 100%, 100% 100%, 0 100%;
+/* alternate underline animation 
+  nav a::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--accent-color);
+  visibility: hidden;
+  transform: scaleX(0);
+  transition: all 0.3s ease-in-out 0s;
 }
 
-.text-section {
-  margin: auto 30vmax;
-  position: relative;
-  top: 100vh;
-  height: 100vh;
-}
-
-.text-section p {
-  padding-top: 100px;
-  font-size: 20px;
-}
+nav a:hover::before {
+  visibility: visible;
+  transform: scaleX(1);
+} */
