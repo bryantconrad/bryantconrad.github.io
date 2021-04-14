@@ -9,13 +9,17 @@ $(document).ready(function () {
             if (direction == 'up') {
                 $('.links').removeClass(active);
                 $('nav').removeClass('side-nav');
+                $('.logo').addClass('logo-hide');
+                $('.logo').removeClass('logo-show');
             } else {
                 $('nav').addClass('side-nav');
                 $('.links').removeClass(active);
                 $('#link-about').addClass(active);
+                $('.logo').addClass('logo-show');
+                $('.logo').removeClass('logo-hide');
             }
         },
-        offset: '40%'
+        offset: '60%'
     })
 
     var waypoint2 = new Waypoint({
@@ -29,7 +33,7 @@ $(document).ready(function () {
                 $('#link-work').toggleClass(active);
             }
         },
-        offset: '40%'
+        offset: '60%'
     })
 
     var waypoint3 = new Waypoint({
@@ -43,7 +47,7 @@ $(document).ready(function () {
             } else {
             }
         },
-        offset: '40%'
+        offset: '60%'
     })
 
 
