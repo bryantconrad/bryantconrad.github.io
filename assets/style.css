@@ -10,6 +10,7 @@
   --main-color: #28527a;
   --background-color: #e4dcc7;
   --accent-color: #59c9a6;
+  --accent-color-dark: #37A985;
   --accent-color-2: #D86327;
   --text-color: #111;
 }
@@ -28,6 +29,7 @@ body {
   background-color: var(--background-color);
 }
 
+/* splash screen styles */
 #letters-grid,
 #name-grid {
   display: grid;
@@ -66,7 +68,7 @@ body {
 }
 
 
-/* creating the circles */
+/* creating circles for animation/logo */
 .circle-container {
   width: 100px;
   height: 100px;
@@ -280,24 +282,6 @@ nav {
   animation-delay: var(--delay-third);
 }
 
-/* main content */
-#spacer {
-  height: 10vh;
-  width: 100%;
-  position: absolute;
-  z-index: 1;
-}
-
-.text-section {
-  margin: auto 30vw;
-  position: relative;
-  top: 100vh;
-  min-height: 100vh;
-  width: min(800px, 50%);
-  padding-top: 100px;
-  font-size: 20px;
-  color: var(--text-color);
-}
 
 /* nav styling */
 nav {
@@ -323,19 +307,13 @@ nav a {
   z-index: 3;
 }
 
-#project-links {
-  display: flex;
-  flex-flow: column;
-  align-items: flex-start;
-  padding-left: 30px;
-  animation: bounceInLeft 0.5s both;
+#spacer {
+  height: 10vh;
+  width: 100%;
+  position: absolute;
+  z-index: 1;
 }
 
-#project-links a {
-  color: var(--text-color);
-  font-size: 0.7em;
-  padding-top: 10px;
-}
 
 /* waypoint alterations to nav */
 .side-nav {
@@ -350,6 +328,21 @@ nav a {
   animation-delay: 0s, 0s;
 }
 
+#project-links {
+  display: flex;
+  flex-flow: column;
+  align-items: flex-start;
+  padding-left: 30px;
+  animation: bounceInLeft 0.5s both;
+}
+
+#project-links a {
+  color: var(--text-color);
+  font-size: 0.7em;
+  padding-top: 10px;
+}
+
+
 /* nav underline */
 .active-nav,
 nav a:hover {
@@ -361,6 +354,8 @@ nav a:hover {
   width: auto;
 }
 
+
+/* style and animate logo */
 .logo {
   width: 50px;
   position: fixed;
@@ -379,9 +374,61 @@ nav a:hover {
 }
 
 
+/* main content */
+.text-section {
+  margin: auto 30vw;
+  position: relative;
+  top: 100vh;
+  min-height: 100vh;
+  width: min(800px, 50%);
+  padding-top: 100px;
+  font-size: 20px;
+  color: var(--text-color);
+}
 
-/* alternate underline animation 
-  nav a::before {
+.text-section h2 {
+  padding-bottom: 30px;
+}
+
+.subheading {
+  font-weight: 700;
+}
+
+.text-section p {
+  padding-bottom: 30px;
+  line-height: 2em;
+}
+
+.text-section p a {
+  text-decoration: none;
+  color: var(--accent-color-2);
+  position: relative;
+  font-weight: 700;
+}
+
+#random-output-lead {
+  padding-bottom: 10px;
+  font-weight: 400;
+}
+
+#random-output {
+  font-size: 1.5em;
+  font-weight: 700;
+  color: var(--main-color);
+  margin-top: -15px;
+}
+
+#random-output:hover {
+  color: var(--accent-color-dark);
+}
+
+
+
+/* .text-section p a:hover{
+  color: var(--accent-color-2);
+}
+
+.text-section > p > a::before {
   content: "";
   position: absolute;
   width: 100%;
@@ -394,7 +441,7 @@ nav a:hover {
   transition: all 0.3s ease-in-out 0s;
 }
 
-nav a:hover::before {
+.text-section p a:hover::before {
   visibility: visible;
   transform: scaleX(1);
 } */

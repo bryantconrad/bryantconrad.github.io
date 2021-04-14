@@ -2,24 +2,6 @@ $(document).ready(function () {
 
     $('#project-links').hide();
 
-    const animateCSS = (element, animation, prefix = 'animate__') =>
-  // We create a Promise and return it
-  new Promise((resolve, reject) => {
-    const animationName = `${prefix}${animation}`;
-    const node = document.querySelector(element);
-
-    node.classList.add(`${prefix}animated`, animationName);
-
-    // When the animation ends, we clean the classes and resolve the Promise
-    function handleAnimationEnd(event) {
-      event.stopPropagation();
-      node.classList.remove(`${prefix}animated`, animationName);
-      resolve('Animation ended');
-    }
-
-    node.addEventListener('animationend', handleAnimationEnd, {once: true});
-  });
-
     //set up waypoints
     var active = 'active-nav';
 
@@ -69,13 +51,55 @@ $(document).ready(function () {
                 $('#project-links').show(100);
             } else {
                 $('#project-links').hide(100);
-        }
-    },
+            }
+        },
         offset: '60%'
     })
 
-
     //reset scroll on refresh
     // history.scrollRestoration = 'manual';
+
+    var quotes = [
+        'try new things.',
+        'learn.',
+        'improve.',
+        'iterate.',
+        'optimize.',
+        'take pride in it.',
+        'have fun.',
+        'experiment.',
+        'solve problems.',
+        'collaborate.',
+        'reflect.',
+        'innovate.',
+        'test.',
+        're-test.',
+        'communicate.',
+        'explore.',
+        'plan.',
+        'brainstorm.',
+        'ideate.',
+        'deliberate.',
+        'make it different.',
+        'make something new.',
+        'pay attention to details.',
+        'care.',
+        'program.',
+        'get inspired.',
+        'find new ideas.',
+        'put together different ideas.',
+        'start over.'
+    ]
+
+    var randomInput = function(){
+        var randomNumber = Math.floor(Math.random() * (quotes.length));
+        $('#random-output').html(quotes[randomNumber]);
+    }
+
+    randomInput();
+
+    $('#random-output').hover(function(){
+        randomInput();
+    })
 
 })
