@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="./assets/cblogo.svg">
+    <link rel="icon" href="./images/cblogo.svg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="stylesheet" href="./assets/style.css">
     <title>Conrad Bryant</title>
@@ -11,7 +11,7 @@
 
 <body>
     <div id="spacer">
-        <a href="#"><img class="logo" src="./assets/cblogo.svg" alt="logo"></a>
+        <a href="#"><img class="logo" src="./images/cblogo.svg" alt="logo"></a>
         <nav>
             <a class="links" id="link-about" href="#about">about</a>
             <a class="links" id="link-work" href="#work">work</a>
@@ -57,10 +57,14 @@
                 Hi, I'm Conrad.
             </h2>
             <p class="subheading">
-                I do web design and development. I really enjoy it.
+                I do web dev. I really enjoy it.
             </p>
             <p>
-                I'm a Spring 2021 graduate from the University of Miami, with a bachelor's in music and an additional major in Interactive Media. I've been a web developer for <a class="underline" href="https://herbert.miami.edu/" target="_blank">Miami Herbert Business School</a> and webmaster for <a class="underline" href="https://www.wvum.org/" target="_blank">WVUM 90.5FM</a> for the past 2 years.
+                I'm a Spring 2021 graduate from the University of Miami, with a bachelor's in music and an additional
+                major in Interactive Media. I've been a web developer for <a class="underline"
+                    href="https://herbert.miami.edu/" target="_blank">Miami Herbert Business School</a> and webmaster
+                for <a class="underline" href="https://www.wvum.org/" target="_blank">WVUM 90.5FM</a> for the past 2
+                years.
             </p>
             <p id="random-output-lead">
                 When I build something, I like to
@@ -68,7 +72,10 @@
             <p id="random-output">
             </p>
             <p>
-                I care about user experience. I make use of a variety of tools for my projects, and I'm always ready to learn a new one. I love creating, problem-solving, and working with people to make the best thing possible. I'm looking for a full-time role where I can make use of these skills and pursue these passions.
+                I care about user experience. I make use of a variety of tools for my projects, and I'm always ready to
+                learn a new one. I love creating, problem-solving, and working with people to make the best thing
+                possible. I'm looking for a full-time role where I can make use of these skills and pursue these
+                passions.
             </p>
         </section>
 
@@ -76,20 +83,43 @@
             <h2>
                 Here are some of my projects.
             </h2>
-            <p>
-                Below are some projects I've done.
-            </p>
-            <!-- <div class="scrolling-wrapper">
-            <div class="card"><h2>Card</h2></div>
-            <div class="card"><h2>Card</h2></div>
-            <div class="card"><h2>Card</h2></div>
-            <div class="card"><h2>Card</h2></div>
-            <div class="card"><h2>Card</h2></div>
-            <div class="card"><h2>Card</h2></div>
-            <div class="card"><h2>Card</h2></div>
-            <div class="card"><h2>Card</h2></div>
-            <div class="card"><h2>Card</h2></div>
-            </div> -->
+
+            <div class="card" id="wvum">
+                <img id="wvum-logo" class="project-logos" height="200px" src="./images/wvum.png" alt="WVUM 90.5FM">
+
+                <article class="projects" id="wvum-project">
+                        <h3>
+                            WVUM DJ Interface and SportsCast
+                        </h3>
+                        <p>WVUM has a robust lineup of DJs and shows on at all sorts of hours. People out there need to
+                            know who's spinning! Enter the aptly named DJ Interface.</p>
+                        <img id="wvum-dj-mockup" src="./images/dj-mockup.png" alt="dj interface">
+
+                        <p>
+                            <ul>
+                                <li>Written in JavaScript</li>
+                                <li>Google Firebase for backend</li>
+                                <li>See the results on <a href="https://www.wvum.org/listen">wvum.org/listen</a></li>
+                            </ul>
+                        </p>
+
+                </article>
+            </div>
+
+            <div class="card" id="geomuse">
+                <img id="geomuse-logo" class="project-logos" height="80px" src="./images/geomuse.png" alt="WVUM 90.5FM">
+
+                <article class="projects" id="geomuse-project">
+                    <p>hello</p>
+                    <p>hello</p>
+                    <div class="mockup">
+                        <img src="./images/phone.png">
+                        <iframe width="360" height="640"
+                            src="https://xd.adobe.com/embed/f851d877-e41a-408c-565a-4193b8a8d530-8e60/" frameborder="0"
+                            allowfullscreen></iframe>
+                    </div>
+                </article>
+            </div>
         </section>
 
 
@@ -103,6 +133,7 @@
     </div>
 
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- <script type="text/javascript" src="./assets/jquery.mousewheel.min.js"></script> -->
     <script type="text/javascript" src="./assets/jquery.waypoints.min.js"></script>
     <script type="text/javascript" src="./assets/script.js"></script>
 

@@ -1,6 +1,7 @@
 $(document).ready(function () {
 
     $('#project-links').hide();
+    $('.projects').hide();
 
     //set up waypoints
     var active = 'active-nav';
@@ -59,6 +60,9 @@ $(document).ready(function () {
     //reset scroll on refresh
     // history.scrollRestoration = 'manual';
 
+
+    //random "I like to" generator
+
     var quotes = [
         'try new things.',
         'learn.',
@@ -101,5 +105,27 @@ $(document).ready(function () {
     $('#random-output').hover(function(){
         randomInput();
     })
+
+    //toggle work sections
+    $('#wvum').click(function(){
+        $('#wvum-logo, #wvum-project').toggle();
+    })
+    $('#geomuse').click(function(){
+        $('#geomuse-logo, #geomuse-project').toggle();
+    })
+
+    $('.card').click(function(){
+        $(this).toggleClass('active-card');
+        $('body').toggleClass('noscroll');
+        //@@@@@ TODO: add an X button
+
+        // $('.card').mousewheel(function(e, delta) {
+        //     this.scrollLeft -= (delta * 80);
+        //     e.preventDefault();
+        //     });
+    })
+
+
+
 
 })

@@ -13,6 +13,7 @@
   --accent-color-dark: #37A985;
   --accent-color-2: #D86327;
   --text-color: #111;
+  --white-text: #FFFAF0;
 }
 
 * {
@@ -423,8 +424,85 @@ nav a:hover {
 }
 
 
+/* work section */
+.card {
+  height: 30vh;
+  border-radius: 20px;
+  background-color: var(--main-color);
+  display: flex;
+  margin: 50px auto;
+  color: var(--white-text);
+  transition: all 0.5s;
+}
 
-/* .text-section p a:hover{
+.project-logos  {
+  display: block;
+  margin: auto;
+  align-self: center;
+  max-height: 75%;
+  max-width: 75%;
+}
+
+.project-logos:hover {
+  animation: pulse 0.5s infinite both;
+}
+
+.active-card {
+  position: fixed;
+  margin: 0;
+  padding: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+  height: 100vh;
+  width: 100vw;
+  border-radius: 0;
+  overflow: scroll;
+}
+
+.noscroll {
+  overflow: hidden;
+}
+
+/* active card stylings */
+.projects {
+  width: 100%;
+  margin: 10vh 30vw;
+}
+
+.projects ul {
+  padding-left: 20px;
+}
+
+#wvum-dj-mockup {
+  width: min(1000px, 50vw);
+}
+
+.mockup {
+  position: relative;
+  margin: auto;
+  width: 10px;
+}
+
+.mockup img {
+  width: 384px;
+  height: 696px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.mockup iframe {
+  position: absolute;
+  top: 12px;
+  left: 10px;
+}
+
+
+/* alternate underline animations
+.text-section p a:hover{
   color: var(--accent-color-2);
 }
 
