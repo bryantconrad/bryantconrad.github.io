@@ -492,8 +492,10 @@ nav a:hover {
   padding-top: 10px;
 }
 
-.projects ul {
+.projects ul, .projects ol {
   padding-left: 20px;
+  line-height: 2em;
+  padding-bottom: 30px;
 }
 
 .projects a {
