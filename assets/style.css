@@ -380,9 +380,9 @@ nav a:hover {
   margin: auto 30vw;
   position: relative;
   top: 100vh;
-  min-height: 100vh;
+  min-height: auto;
   width: min(800px, 50%);
-  padding-top: 100px;
+  padding-top: 20vh;
   font-size: 20px;
   color: var(--text-color);
 }
@@ -407,6 +407,12 @@ nav a:hover {
   font-weight: 700;
 }
 
+.last {
+  padding-bottom: 20vh;
+}
+
+
+/* about section */
 #random-output-lead {
   padding-bottom: 10px;
   font-weight: 400;
@@ -421,29 +427,36 @@ nav a:hover {
 
 #random-output:hover {
   color: var(--accent-color-dark);
+  animation: bounce 0.5s;
 }
 
 
 /* work section */
 .card {
   height: 30vh;
+  width: 30vh;
   border-radius: 20px;
   background-color: var(--main-color);
   display: flex;
   margin: 50px auto;
   color: var(--white-text);
   transition: all 0.5s;
+  cursor: pointer;
 }
 
 .project-logos  {
   display: block;
   margin: auto;
   align-self: center;
-  max-height: 75%;
+  height: auto;
   max-width: 75%;
 }
 
-.project-logos:hover {
+#wvum-logo {
+  max-width: 50%;
+}
+
+.project-logos:hover, .contact-icons img:hover {
   animation: pulse 0.5s infinite both;
 }
 
@@ -460,6 +473,7 @@ nav a:hover {
   width: 100vw;
   border-radius: 0;
   overflow: scroll;
+  overflow-x: hidden;
 }
 
 .noscroll {
@@ -470,19 +484,37 @@ nav a:hover {
 .projects {
   width: 100%;
   margin: 10vh 30vw;
+  overflow: visible;
+}
+
+.projects h3 {
+  padding-bottom: 20px;
+  padding-top: 10px;
 }
 
 .projects ul {
   padding-left: 20px;
 }
 
+.projects a {
+  color: var(--accent-color-2);
+  text-decoration: none;
+  font-weight: 700;
+}
+
 #wvum-dj-mockup {
   width: min(1000px, 50vw);
+  padding-bottom: 30px;
+}
+
+#wvum-sports-mockup {
+  width: min(1000px, 50vw);
+  padding-bottom: 30px;
 }
 
 .mockup {
   position: relative;
-  margin: auto;
+  /* margin-bottom: 10vh; */
   width: 10px;
 }
 
@@ -496,10 +528,28 @@ nav a:hover {
 
 .mockup iframe {
   position: absolute;
-  top: 12px;
+  top: 11px;
   left: 10px;
 }
 
+/* contact section */
+#contact p a {
+  color: var(--accent-color-2);
+  padding-bottom: 100px;
+}
+
+.contact-icons {
+  display: flex;
+  justify-content: space-around;
+}
+
+.contact-icons img {
+  height: 100px;
+}
+
+#contact {
+  padding-bottom: 20vh;
+}
 
 /* alternate underline animations
 .text-section p a:hover{

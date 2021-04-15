@@ -102,7 +102,7 @@ $(document).ready(function () {
 
     randomInput();
 
-    $('#random-output').hover(function(){
+    $('#random-output').mouseenter(function(){
         randomInput();
     })
 
@@ -112,6 +112,9 @@ $(document).ready(function () {
     })
     $('#geomuse').click(function(){
         $('#geomuse-logo, #geomuse-project').toggle();
+    })
+    $('#gorun').click(function(){
+        $('#gorun-logo, #gorun-project').toggle();
     })
 
     $('.card').click(function(){

@@ -18,6 +18,7 @@
             <div id="project-links">
                 <a href="#wvum">WVUM</a>
                 <a href="#geomuse">GeoMuse</a>
+                <a href="#gorun">Gorun</a>
             </div>
             <a class="links" id="link-contact" href="#contact">contact</a>
         </nav>
@@ -79,6 +80,9 @@
             </p>
         </section>
 
+
+
+
         <section class="text-section" id="work">
             <h2>
                 Here are some of my projects.
@@ -88,30 +92,56 @@
                 <img id="wvum-logo" class="project-logos" height="200px" src="./images/wvum.png" alt="WVUM 90.5FM">
 
                 <article class="projects" id="wvum-project">
-                        <h3>
-                            WVUM DJ Interface and SportsCast
-                        </h3>
-                        <p>WVUM has a robust lineup of DJs and shows on at all sorts of hours. People out there need to
-                            know who's spinning! Enter the aptly named DJ Interface.</p>
-                        <img id="wvum-dj-mockup" src="./images/dj-mockup.png" alt="dj interface">
+                    <h2>
+                        DJ Interface and SportsCast
+                    </h2>
+                    <p class="subheading">A couple of web apps I created to enhance the listener experience for our
+                        beloved radio station.</p>
+                    <p>WVUM has a robust lineup of DJs and shows, coming on at all sorts of odd and even hours. People
+                        out there need to know who's spinning! Enter the aptly named:</p>
+                    <h3>DJ Interface</h3>
+                    <img id="wvum-dj-mockup" src="./images/dj-mockup.png" alt="dj interface">
 
-                        <p>
-                            <ul>
-                                <li>Written in JavaScript</li>
-                                <li>Google Firebase for backend</li>
-                                <li>See the results on <a href="https://www.wvum.org/listen">wvum.org/listen</a></li>
-                            </ul>
-                        </p>
+                    <p>This interface is a simple 2-click setup for DJs to display their show on the website. It's
+                        written in lightweight HTML and JavaScript, and makes use of Google Firebase for the backend.
+                        It's deployable anywhere and currently hosted on our website behind a password so our DJs can
+                        even produce remotely.</p>
+                    <p>The purpose is simple, but with our ever-rotating roster of both DJs and webmasters, it had to be
+                        easy to use and maintain. And it is! See the results on <a href="#">Github.</a></p>
+                    <p>This early foray into JavaScript and Firebase's unique serverless backend was a great warmup for
+                        our main event:</p>
+
+                    <h3>SportsCast</h3>
+                    <img id="wvum-sports-mockup" src="./images/sportsinterface.png">
+                    <p>WVUM is also the premiere destination for UM sports listening. To enhance the fan experience, we
+                        wanted to show real-time game info, and we've done just that.</p>
+                    <p>The needs were similar: a simple interface so that minimal training is required for our casters,
+                        and of course the public-facing side has to be instantly readable. The execution was a bit more
+                        complicated, though, because we wanted record keeping as well - not just instantaneous
+                        information.</p>
+                    <p>I initially created it in PHP, before coming to the numbing realization that our website CMS did
+                        not support it. Cue the restart from scratch, this time using the same trusty Firebase methods
+                        as our previous interface (just with a much more complex database now). And it was another
+                        success! Another easily packageable/deployable, lightweight JavaScript app.</p>
+                    <p>All functionality is finished, but work is still ongoing. The roadmap has more game info options
+                        in the pipeline, coming soon to a <a href="#">Github</a> repo near you.</p>
+                    <p class="last">I loved these projects. I got to go through the entire design and build process for
+                        each, getting to work both my technical and creative muscles. You can see them in action at <a
+                            href="https://www.wvum.org/listen">wvum.org/listen.</a></p>
+
 
                 </article>
             </div>
 
             <div class="card" id="geomuse">
-                <img id="geomuse-logo" class="project-logos" height="80px" src="./images/geomuse.png" alt="WVUM 90.5FM">
+                <img id="geomuse-logo" class="project-logos" height="80px" src="./images/geomuse.png" alt="GeoMuse">
 
                 <article class="projects" id="geomuse-project">
-                    <p>hello</p>
-                    <p>hello</p>
+                    <h2>
+                        GeoMuse Prototype
+                    </h2>
+                    <p class="subheading">An exercise in design.</p>
+                    <p>This was a fun mockup project</p>
                     <div class="mockup">
                         <img src="./images/phone.png">
                         <iframe width="360" height="640"
@@ -120,14 +150,31 @@
                     </div>
                 </article>
             </div>
+
+            <div class="card" id="gorun">
+                <img id="gorun-logo" class="project-logos" height="80px" src="./images/gorun.webp" alt="GoRun">
+
+                <article class="projects" id="gorun-project">
+                    <h2>WIP</h2>
+                    <p>Check back soon!</p>
+                </article>
+            </div>
         </section>
 
 
+
+
         <section class="text-section" id="contact">
-            <p>
-                CONTACTTTTTTTT Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptate sapiente ipsam
-                nostrum aspernatur, atque labore maxime officia sint neque deleniti. Ullam eligendi quas, eaque ducimus
-                assumenda placeat incidunt quia quis!
+            <h2>
+                Get in touch!
+            </h2>
+            <p class="last">
+                <a href="mailto:Bryant.ConradL@gmail.com">Bryant.ConradL@gmail.com</a>
+                <div class="contact-icons">
+                    <a href="https://github.com/bryantconrad"><img src="./images/github.svg" alt="Github"></a>
+                    <a href="https://www.linkedin.com/in/conrad-bryant-321919185/"><img
+                            src="./images/linkedin-black.svg" alt="LinkedIn"></a>
+                </div>
             </p>
         </section>
     </div>
