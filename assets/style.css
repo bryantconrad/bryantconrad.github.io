@@ -502,12 +502,7 @@ nav a:hover {
   font-weight: 700;
 }
 
-#wvum-dj-mockup {
-  width: min(1000px, 50vw);
-  padding-bottom: 30px;
-}
-
-#wvum-sports-mockup {
+#wvum-dj-mockup, #wvum-sports-mockup, .projects img {
   width: min(1000px, 50vw);
   padding-bottom: 30px;
 }
