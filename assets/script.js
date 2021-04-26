@@ -1,8 +1,9 @@
 $(document).ready(function () {
 
     $('#project-links').hide();
-    $('.projects').hide();
+    $('.project').hide();
 
+    
     //set up waypoints
     var active = 'active-nav';
 
@@ -57,6 +58,7 @@ $(document).ready(function () {
         offset: '60%'
     })
 
+
     //reset scroll on refresh
     // history.scrollRestoration = 'manual';
 
@@ -95,40 +97,35 @@ $(document).ready(function () {
         'start over.'
     ]
 
-    var randomInput = function(){
+    var randomInput = function () {
         var randomNumber = Math.floor(Math.random() * (quotes.length));
         $('#random-output').html(quotes[randomNumber]);
     }
 
     randomInput();
 
-    $('#random-output').mouseenter(function(){
+    $('#random-output').mouseenter(function () {
         randomInput();
     })
 
+
     //toggle work sections
-    $('#wvum').click(function(){
-        $('#wvum-logo, #wvum-project').toggle();
-    })
-    $('#geomuse').click(function(){
-        $('#geomuse-logo, #geomuse-project').toggle();
-    })
-    $('#gorun').click(function(){
-        $('#gorun-logo, #gorun-project').toggle();
+
+    var card, logo, article;
+
+    $('.card-cover').click(function () {
+        card = $(this).parent();
+        logo = $(this).children('img');
+        article = card.children('article');
+        console.log(logo);
     })
 
-    $('.card').click(function(){
-        $(this).toggleClass('active-card');
+    $('.card-cover, .xout').click(function () {
+        logo.toggle();
+        article.toggle();
+        card.toggleClass('active-card');
         $('body').toggleClass('noscroll');
-        //@@@@@ TODO: add an X button
-
-        // $('.card').mousewheel(function(e, delta) {
-        //     this.scrollLeft -= (delta * 80);
-        //     e.preventDefault();
-        //     });
     })
-
-
 
 
 })

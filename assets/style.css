@@ -8,7 +8,7 @@
   --anim-split-length: 2s;
   --anim-name-length: 1.5s;
   --main-color: #28527a;
-  --background-color: #e4dcc7;
+  --background-color: #FFFAF0;
   --accent-color: #59c9a6;
   --accent-color-dark: #37A985;
   --accent-color-2: #D86327;
@@ -408,7 +408,7 @@ nav a:hover {
 }
 
 .last {
-  padding-bottom: 20vh;
+  padding-bottom: none;
 }
 
 
@@ -444,7 +444,13 @@ nav a:hover {
   cursor: pointer;
 }
 
-.project-logos  {
+.card-cover {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+.project-logo {
   display: block;
   margin: auto;
   align-self: center;
@@ -456,7 +462,8 @@ nav a:hover {
   max-width: 50%;
 }
 
-.project-logos:hover, .contact-icons img:hover {
+.project-logo:hover,
+.contact-icons img:hover {
   animation: pulse 0.5s infinite both;
 }
 
@@ -474,44 +481,64 @@ nav a:hover {
   border-radius: 0;
   overflow: scroll;
   overflow-x: hidden;
+  cursor: auto;
 }
 
 .noscroll {
   overflow: hidden;
 }
 
+
 /* active card stylings */
-.projects {
+.xout {
+  position: fixed;
+  right: 80%;
+  cursor: pointer;
+  font-size: 2em;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  transition: all 0.5s;
+}
+
+.xout:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 100%;
+}
+
+.project {
   width: 100%;
   margin: 10vh 30vw;
   overflow: visible;
 }
 
-.projects h3 {
+.project h3 {
   padding-bottom: 20px;
   padding-top: 10px;
 }
 
-.projects ul, .projects ol {
+.project ul,
+.project ol {
   padding-left: 20px;
   line-height: 2em;
   padding-bottom: 30px;
 }
 
-.projects a {
+.project a {
   color: var(--accent-color-2);
   text-decoration: none;
   font-weight: 700;
 }
 
-#wvum-dj-mockup, #wvum-sports-mockup, .projects img {
+#wvum-dj-mockup,
+#wvum-sports-mockup,
+.project img {
   width: min(1000px, 50vw);
   padding-bottom: 30px;
 }
 
 .mockup {
   position: relative;
-  /* margin-bottom: 10vh; */
   width: 10px;
 }
 
@@ -528,6 +555,7 @@ nav a:hover {
   top: 11px;
   left: 10px;
 }
+
 
 /* contact section */
 #contact p a {
