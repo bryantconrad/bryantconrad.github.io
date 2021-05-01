@@ -111,17 +111,15 @@ $(document).ready(function () {
 
     //toggle work sections
 
-    var card, logo, article;
+    var card, article;
 
     $('.card-cover').click(function () {
         card = $(this).parent();
-        logo = $(this).children('img');
         article = card.children('article');
-        console.log(logo);
     })
 
     $('.card-cover, .xout').click(function () {
-        logo.toggle();
+        $('.card-cover').toggle();
         article.toggle();
         card.toggleClass('active-card');
         $('body').toggleClass('noscroll');
