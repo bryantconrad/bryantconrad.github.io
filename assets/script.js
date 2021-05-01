@@ -10,6 +10,7 @@ $(document).ready(function () {
     var waypoint = new Waypoint({
         element: $('#about'),
         handler: function (direction) {
+            $('#random-output').toggleClass('first-bounce');
             if (direction == 'up') {
                 $('.links').removeClass(active);
                 $('nav').removeClass('side-nav');
@@ -29,6 +30,7 @@ $(document).ready(function () {
     var waypoint2 = new Waypoint({
         element: $('#work'),
         handler: function (direction) {
+            $('#random-output').toggleClass('first-bounce');
             if (direction == 'up') {
                 $('.links').removeClass(active);
                 $('#link-about').addClass(active);
@@ -36,7 +38,11 @@ $(document).ready(function () {
             } else {
                 $('.links').removeClass(active);
                 $('#link-work').toggleClass(active);
-                $('#project-links').show(100);
+                
+                // don't show on small screens
+                if (window.matchMedia("(min-width: 700px").matches) {
+                    $('#project-links').show(100);
+                }
             }
         },
         offset: '60%'
