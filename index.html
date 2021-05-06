@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="./images/cblogo.svg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="./assets/lightbox.min.css">
     <link rel="stylesheet" href="./assets/style.css">
     <title>Conrad Bryant</title>
 </head>
@@ -62,7 +63,7 @@
             </p>
             <p>
                 I'm a Spring 2021 graduate from the University of Miami, with a bachelor's in music and an additional
-                major in Interactive Media. I've been a web developer for <a href="https://herbert.miami.edu/"
+                major in interactive media. I've been a web developer for <a href="https://herbert.miami.edu/"
                     target="_blank">Miami Herbert Business School</a> and webmaster
                 for <a href="https://www.wvum.org/" target="_blank">WVUM 90.5FM</a> for the past 2
                 years.
@@ -125,7 +126,7 @@
                     <div class="list-container">
                         <ul>
                             <li>Web Apps</li>
-                            <li>JavaScript/Firebase</li>
+                            <li>JavaScript / Firebase</li>
                         </ul>
                         <ul>
                             <li>Solo Project</li>
@@ -198,13 +199,31 @@
                         </ul>
                         <ul>
                             <li>Solo Project</li>
-                            <li>UX/UI</li>
+                            <li>UX / UI</li>
                         </ul>
                     </div>
                     <img src="./images/geomuse.png" alt="GeoMuse">
                     <p>This was a fun project to create a mockup of a mobile app being created at UM. The function is
                         to aid users in exploring an area - UM's campus in this case - for art. Being only a prototype,
                         I was able to focus solely on design and UX.</p>
+                    <!-- @@ To do: find a gallery that doesn't have load times -->
+                    <p class="subheading">Sketches</p>
+                    <div class="gallery">
+                        <a href="images/geomuse_sketch1.jpg" data-lightbox="sketches" data-title="GeoMuse Sketches"><img class="geomuse-sketch" src="./images/geomuse_sketch1.jpg"></a>
+                        <a href="images/geomuse_sketch2.jpg" data-lightbox="sketches" data-title="GeoMuse Sketches"><img class="geomuse-sketch" src="./images/geomuse_sketch2.jpg"></a>
+                        <a href="images/geomuse_sketch3.jpg" data-lightbox="sketches" data-title="GeoMuse Sketches"><img class="geomuse-sketch" src="./images/geomuse_sketch3.jpg"></a>
+                    </div>
+
+                    <p class="subheading">Wireframes</p>
+                    <div class="gallery">
+                        <a href="./images/A_01_homescreen_wireframe.png" data-lightbox="sketches" data-title="GeoMuse Wireframes"><img class="geomuse-sketch" src="./images/A_01_homescreen_wireframe.png"></a>
+                        <a href="./images/A_02_mapView_wireframe.png" data-lightbox="sketches" data-title="GeoMuse Wireframes"><img class="geomuse-sketch" src="./images/A_02_mapView_wireframe.png"></a>
+                        <a href="./images/A_03_listView_wireframe.png" data-lightbox="sketches" data-title="GeoMuse Wireframes"><img class="geomuse-sketch" src="./images/A_03_listView_wireframe.png"></a>
+                        <a href="./images/A_06_object_detailView_wireframe.png" data-lightbox="sketches" data-title="GeoMuse Wireframes"><img class="geomuse-sketch" src="./images/A_06_object_detailView_wireframe.png"></a>
+                        <a href="./images/A_07_searchView_wireframe.png" data-lightbox="sketches" data-title="GeoMuse Wireframes"><img class="geomuse-sketch" src="./images/A_07_searchView_wireframe.png"></a>
+                        <a href="./images/A_08_searchResults_wireframe.png" data-lightbox="sketches" data-title="GeoMuse Wireframes"><img class="geomuse-sketch" src="./images/A_08_searchResults_wireframe.png"></a>
+                    </div>
+                    
                     <p>I prioritized ease of navigation. The app is meant to be a complement to the larger activity of
                         sightseeing and exploring. That meant there should be no digging required to find any
                         information. Nothing in the app is more than 2 screens deep, and there is always lateral
@@ -214,6 +233,7 @@
                         attention/learning required. I wanted to make clear where the user is at all times and to keep
                         the information layout and hierarchy as
                         simple as possible with minimal layers.</p>
+                    <p class="subheading">Interactive Prototype</p>
                     <div class="mockup">
                         <img src="./images/phone.png">
                         <iframe width="360" height="640"
@@ -232,15 +252,35 @@
                     </div>
                 </div>
 
-                <article class="project" id="gorun-project">
+                <article class="project" id="barre-project">
                     <div class="xout">
                         x
                     </div>
                     <h2>
                         Ye Olde Barre
                     </h2>
+                    <p class="subheading">
+                        A 3D bartending game with a custom controller.
+                    </p>
+                    <div class="list-container">
+                        <ul>
+                            <li>Game Demo</li>
+                            <li>Unity / C# and CircuitPython</li>
+                        </ul>
+                        <ul>
+                            <li>Solo Project</li>
+                            <li>Game Design / UX</li>
+                        </ul>
+                    </div>
+                    <img id="barre-logo-large" src="./images/barre-background.png" alt="Ye Olde Barre">
                     <p>
-                        Check back soon!
+                        This project was something way out of left field for me. It was my first real foray into Unity and games in general, as well as into physical computing. At this stage, it's mostly a proof-of-concept. I do plan to use this as a foundation to build a more complete experience in the near future.
+                    </p>
+                    <p>
+                        The game includes liquid simulation to allow the player to pour drinks, add some garnishes, throw things, and mix strange colored liquids. I was hardly comfortable with Unity and C# coming in, but really built up some chops through the project. 
+                    </p>
+                    <p>
+
                     </p>
                 </article>
             </div>
@@ -254,8 +294,9 @@
                 Get in touch!
             </h2>
             <p>
-                <a href="mailto:Bryant.ConradL@gmail.com">Bryant.ConradL@gmail.com</a>
+                Send me a message at <a href="mailto:Bryant.ConradL@gmail.com">Bryant.ConradL@gmail.com</a> if you'd like to talk about anything at all!
             </p>
+            <p id="resume"><a href="./conrad-bryant-resume.pdf">My Resume</a></p>
             <div class="contact-icons">
                 <a href="https://github.com/bryantconrad"><img src="./images/github.svg" alt="Github"></a>
                 <a href="https://www.linkedin.com/in/conrad-bryant-321919185/"><img src="./images/linkedin-black.svg"
@@ -264,9 +305,15 @@
         </section>
     </div>
 
+    <footer class="text-section">
+        <h2>About this site</h2>
+        <p>This site was designed and coded from scratch by me! It's hosted on <a href="https://github.com/bryantconrad/bryantconrad.github.io">Github</a>, of course. I used <a href="https://animate.style/">Animate.css</a>, <a href="https://jquery.com/">jQuery</a>, and <a href="http://imakewebthings.com/waypoints/">Waypoints</a>.</p>
+    </footer>
+
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <!-- <script type="text/javascript" src="./assets/jquery.mousewheel.min.js"></script> -->
     <script type="text/javascript" src="./assets/jquery.waypoints.min.js"></script>
+    <script type="text/javascript" src="./assets/lightbox.min.js"></script>
     <script type="text/javascript" src="./assets/script.js"></script>
 
 </body>

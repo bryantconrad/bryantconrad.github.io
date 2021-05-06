@@ -320,7 +320,7 @@ nav a {
 .side-nav {
   flex-flow: column nowrap;
   position: fixed;
-  top: 40vh;
+  top: 30vh;
   text-align: left;
   align-items: flex-start;
   margin: auto;
@@ -417,10 +417,11 @@ nav a:hover {
   display: grid;
   grid-template-columns: 1fr 1fr;
   width: 100%;
+  /* white-space:pre-line; */
 }
 
 ul {
-  list-style-position: inside;
+  /* list-style-position: inside; */
   line-height: 1.5em;
   padding-bottom: 30px;
 }
@@ -496,6 +497,12 @@ ul {
   width: 100%;
 }
 
+#barre-logo-large {
+  width: 100%;
+  /* max-width: 600px; */
+  display: block;
+}
+
 .project-summary {
   padding: 30px 20px;
   padding-right: max(10%, 15px);
@@ -552,7 +559,8 @@ ul {
 
 .project {
   width: 100%;
-  margin: 10vh 30vw;
+  margin: 10vh 10vmax 10vh 30vw;
+  max-width: 1000px;
   overflow: visible;
 }
 
@@ -572,6 +580,20 @@ ul {
   color: var(--accent-color-2);
   text-decoration: none;
   font-weight: 700;
+}
+
+.gallery {
+  display: grid;
+  width: 100%;
+  max-width: 1000px;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 5%;
+}
+
+.geomuse-sketch {
+  display: block;
+  max-width: min(100%, 600px);
+  max-height: 100%;
 }
 
 #wvum-dj-mockup,
@@ -615,8 +637,12 @@ ul {
   height: 100px;
 }
 
-#contact {
-  padding-bottom: 20vh;
+#resume {
+  text-align: center;
+}
+
+#resume a {
+  color: var(--accent-color-dark)!important;
 }
 
 /* alternate underline animations

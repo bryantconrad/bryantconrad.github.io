@@ -158,5 +158,12 @@ $(document).ready(function () {
         $('body').toggleClass('noscroll');
     })
 
+    //lightbox controls
+    lightbox.option({
+        'fadeDuration': 200,
+        'disableScrolling': true,
+        'imageFadeDuration': 200
+    })
+
 
 })
