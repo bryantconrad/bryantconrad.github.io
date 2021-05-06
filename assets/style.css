@@ -425,7 +425,7 @@ ul {
 
 /* about section */
 #random-output-lead {
-  padding-bottom: 10px;
+  padding-bottom: 30px;
   font-weight: 400;
 }
 
@@ -436,9 +436,17 @@ ul {
   margin-top: -15px;
 }
 
-#random-output:hover {
-  color: var(--accent-color-dark);
-  animation: bounce 0.5s;
+.random-output-hover:hover {
+  color: var(--accent-color-dark)!important;
+  animation: bounce 0.5s!important;
+}
+
+.cta {
+  font-size: 1.5em;
+}
+
+.cta a {
+  color: var(--accent-color-dark)!important;
 }
 
 

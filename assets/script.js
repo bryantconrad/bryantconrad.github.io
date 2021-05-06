@@ -2,8 +2,29 @@ $(document).ready(function () {
 
     $('#project-links').hide();
     $('.project').hide();
+    var isEnabled = false;
 
-    
+    //create animateCSS function
+    const animateCSS = (element, animation, prefix = 'animate__') =>
+        new Promise((resolve, reject) => {
+            const animationName = `${prefix}${animation}`;
+            const node = document.querySelector(element);
+
+            node.classList.add(`${prefix}animated`, animationName);
+
+            // When the animation ends, we clean the classes and resolve the Promise
+            function handleAnimationEnd(event) {
+                event.stopPropagation();
+                node.classList.remove(`${prefix}animated`, animationName);
+                resolve('Animation ended');
+            }
+
+            node.addEventListener('animationend', handleAnimationEnd, {
+                once: true
+            });
+        });
+
+
     //set up waypoints
     var active = 'active-nav';
 
@@ -15,12 +36,18 @@ $(document).ready(function () {
                 $('nav').removeClass('side-nav');
                 $('.logo').addClass('logo-hide');
                 $('.logo').removeClass('logo-show');
+                $('#random-output').removeClass('random-output-hover');
             } else {
                 $('nav').addClass('side-nav');
                 $('.links').removeClass(active);
                 $('#link-about').addClass(active);
                 $('.logo').addClass('logo-show');
                 $('.logo').removeClass('logo-hide');
+                randomInput();
+                animateCSS('#random-output', 'bounce').then((message) => {
+                    $('#random-output').addClass('random-output-hover');
+                    isEnabled = true;
+                });
             }
         },
         offset: '60%'
@@ -36,7 +63,7 @@ $(document).ready(function () {
             } else {
                 $('.links').removeClass(active);
                 $('#link-work').toggleClass(active);
-                
+
                 // don't show on small screens
                 if (window.matchMedia("(min-width: 700px").matches) {
                     $('#project-links').show(100);
@@ -101,7 +128,7 @@ $(document).ready(function () {
         'start over.'
     ]
 
-    var randomInput = function () {
+    function randomInput() {
         var randomNumber = Math.floor(Math.random() * (quotes.length));
         $('#random-output').html(quotes[randomNumber]);
     }
@@ -109,7 +136,9 @@ $(document).ready(function () {
     randomInput();
 
     $('#random-output').mouseenter(function () {
-        randomInput();
+        if (isEnabled) {
+            randomInput();
+        }
     })
 
 
