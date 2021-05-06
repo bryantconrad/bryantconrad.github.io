@@ -383,7 +383,8 @@ nav a:hover {
   max-width: 1000px;
   position: relative;
   top: 100vh;
-  padding-top: 20vh;
+  padding-top: 10vh;
+  padding-bottom: 10vh;
   font-size: 20px;
   color: var(--text-color);
 }
@@ -412,6 +413,12 @@ nav a:hover {
   padding-bottom: 30px;
 }
 
+.list-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+}
+
 ul {
   list-style-position: inside;
   line-height: 1.5em;
@@ -434,6 +441,7 @@ ul {
   font-weight: 700;
   color: var(--main-color);
   margin-top: -15px;
+  padding-bottom: 20px;
 }
 
 .random-output-hover:hover {
@@ -441,11 +449,14 @@ ul {
   animation: bounce 0.5s!important;
 }
 
-.cta {
-  font-size: 1.5em;
+.cta{
+  /* font-size: 1.2em; */
+  font-weight: 700;
+  padding: 0!important;
 }
 
 .cta a {
+  /* font-size: 1.5em; */
   color: var(--accent-color-dark)!important;
 }
 
@@ -479,6 +490,10 @@ ul {
   max-height: 80%;
   max-width: 80%;
   object-fit: contain;
+}
+
+#barre-logo {
+  width: 100%;
 }
 
 .project-summary {
