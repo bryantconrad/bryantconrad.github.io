@@ -81,7 +81,9 @@ $(document).ready(function () {
             if (direction == 'up') {
                 $('.links').removeClass(active);
                 $('#link-work').addClass(active);
-                $('#project-links').show(100);
+                if (window.matchMedia("(min-width: 700px").matches) {
+                    $('#project-links').show(100);
+                }
             } else {
                 $('#project-links').hide(100);
             }
