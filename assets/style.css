@@ -408,6 +408,16 @@ nav a:hover {
   font-weight: 700;
 }
 
+.text-section h3 {
+  padding-bottom: 30px;
+}
+
+ul {
+  list-style-position: inside;
+  line-height: 1.5em;
+  padding-bottom: 30px;
+}
+
 .last {
   padding-bottom: none;
 }
@@ -426,7 +436,7 @@ nav a:hover {
   margin-top: -15px;
 }
 
-#random-output:hover, .first-bounce {
+#random-output:hover {
   color: var(--accent-color-dark);
   animation: bounce 0.5s;
 }

@@ -10,7 +10,6 @@ $(document).ready(function () {
     var waypoint = new Waypoint({
         element: $('#about'),
         handler: function (direction) {
-            $('#random-output').toggleClass('first-bounce');
             if (direction == 'up') {
                 $('.links').removeClass(active);
                 $('nav').removeClass('side-nav');
@@ -30,7 +29,6 @@ $(document).ready(function () {
     var waypoint2 = new Waypoint({
         element: $('#work'),
         handler: function (direction) {
-            $('#random-output').toggleClass('first-bounce');
             if (direction == 'up') {
                 $('.links').removeClass(active);
                 $('#link-about').addClass(active);
