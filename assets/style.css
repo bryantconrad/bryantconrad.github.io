@@ -421,9 +421,12 @@ nav a:hover {
 }
 
 ul {
-  /* list-style-position: inside; */
   line-height: 1.5em;
   padding-bottom: 30px;
+}
+
+.list-inside {
+  list-style-position: inside;
 }
 
 .last {
