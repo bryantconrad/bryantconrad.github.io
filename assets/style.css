@@ -433,6 +433,10 @@ ul {
   padding-bottom: none;
 }
 
+a:hover {
+  text-decoration: underline;
+}
+
 
 /* about section */
 #random-output-lead {
@@ -459,11 +463,6 @@ ul {
   padding: 0!important;
 }
 
-.cta a {
-  /* font-size: 1.5em; */
-  color: var(--accent-color-dark)!important;
-}
-
 
 /* work section */
 .card {
@@ -486,6 +485,24 @@ ul {
   grid-template-columns: 1fr 2fr;
 }
 
+#geomuse {
+  background-color: #329A79;
+  color: white;
+}
+
+#barre {
+  background-color: #8a7553;
+  color: white;
+}
+
+#barre a {
+  color: var(--main-color);
+}
+
+#studies {
+  background-color: rgb(39, 39, 39);
+}
+
 .project-logo {
   display: block;
   /* padding: 30px; */
@@ -504,6 +521,10 @@ ul {
   width: 100%;
   /* max-width: 600px; */
   display: block;
+}
+
+#studies-logo {
+  height: 75%;
 }
 
 .project-summary {
@@ -642,8 +663,12 @@ ul {
   height: 100%;
 }
 
-.extra-padding {
+.extra-padding-top {
   padding-top: 30px;
+}
+
+.extra-padding-bottom {
+  padding-bottom: 30px;
 }
 
 
@@ -663,10 +688,6 @@ ul {
 
 #resume {
   text-align: center;
-}
-
-#resume a {
-  color: var(--accent-color-dark)!important;
 }
 
 /* alternate underline animations
