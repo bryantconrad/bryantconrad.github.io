@@ -24,6 +24,7 @@
 
 html {
   scroll-behavior: smooth;
+  font-size: 20px;
 }
 
 body {
@@ -58,7 +59,7 @@ body {
   user-select: none;
   align-self: end;
   opacity: 0;
-  font-size: 4em;
+  font-size: 3.2em;
   font-weight: 700;
   padding: 0;
   color: var(--text-color);
@@ -293,9 +294,9 @@ nav {
   text-align: left;
   margin-top: 40px;
   margin-left: max(10vw, 30px);
-  font-size: 2em;
+  font-size: 1.6em;
   font-weight: 400;
-  gap: 10px 30px;
+  gap: 0.7rem 2rem;
 }
 
 nav a {
@@ -323,8 +324,8 @@ nav a {
   top: 30vh;
   text-align: left;
   align-items: flex-start;
-  margin: auto;
-  margin-left: max(8vw, 30px);
+  margin: 0;
+  left: max(calc(30vw - 300px), 50px);
   animation: fadeInDown var(--anim-name-length) backwards, bounceInDown 0.5s;
   animation-delay: 0s, 0s;
 }
@@ -362,7 +363,7 @@ nav a:hover {
   width: 50px;
   position: fixed;
   margin-top: 40px;
-  margin-left: max(10vw, 30px);
+  left: max(calc(30vw - 300px), 50px);
   opacity: 0;
 }
 
@@ -379,12 +380,11 @@ nav a:hover {
 /* main content */
 .text-section {
   margin-left: 30vw;
-  margin-right: 10vw;
+  margin-right: 50px;
   max-width: 1000px;
   position: relative;
   top: 100vh;
-  padding-top: 10vh;
-  padding-bottom: 10vh;
+  padding: 3.5rem 0;
   font-size: 20px;
   color: var(--text-color);
 }
@@ -408,6 +408,8 @@ nav a:hover {
   position: relative;
   font-weight: 700;
 }
+
+.text-section p a:hover {text-decoration: underline;}
 
 .text-section h3 {
   padding-bottom: 30px;
@@ -473,12 +475,21 @@ ul {
   cursor: pointer;
 }
 
+.card:first-of-type {
+  margin-top: 15px;
+}
+
+.card:last-of-type {
+  margin-bottom: 0;
+}
+
 .card-cover {
   width: 100%;
   height: 100%;
   align-self: center;
   display: grid;
   grid-template-columns: 1fr 2fr;
+  max-width: 1000px;
 }
 
 #geomuse {
@@ -533,9 +544,11 @@ ul {
   padding-bottom: 15px;
 }
 
+.card-cover, .contact-icons img {transition: all 0.5s;}
+
 .card-cover:hover,
 .contact-icons img:hover {
-  animation: pulse 1s infinite both;
+  transform: scale(1.05);
 }
 
 .active-card {
@@ -709,7 +722,7 @@ ul {
   transform: scaleX(1);
 } */
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 800px) {
   .side-nav {
     flex-flow: row nowrap;
     position: fixed;
@@ -735,7 +748,6 @@ ul {
   }
 
   .text-section {
-    margin-left: 15px;
-    margin-right: 15px;
+    margin: 0 2rem;
   }
 }
