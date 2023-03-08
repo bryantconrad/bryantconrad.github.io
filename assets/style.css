@@ -385,7 +385,6 @@ nav a:hover {
   position: relative;
   top: 100vh;
   padding: 3.5rem 0;
-  font-size: 20px;
   color: var(--text-color);
 }
 
@@ -463,6 +462,7 @@ ul {
 
 
 /* work section */
+
 .card {
   min-height: 400px;
   width: 100%;
@@ -535,7 +535,7 @@ ul {
 }
 
 .project-summary {
-  padding: 30px 20px;
+  padding: 1.5em 1em;
   padding-right: max(10%, 15px);
   align-self: center;
 }
@@ -553,7 +553,7 @@ ul {
 
 .active-card {
   position: fixed;
-  margin: 0;
+  margin: 0 !important;
   padding: 0;
   top: 0;
   right: 0;
@@ -592,7 +592,9 @@ ul {
 
 .project {
   width: 100%;
-  margin: 10vh 10vmax 10vh 30vw;
+  margin-left:30vw;
+  margin-right: 50px;
+  margin-top: 7em;
   max-width: 1000px;
   overflow: visible;
 }
@@ -722,7 +724,13 @@ ul {
   transform: scaleX(1);
 } */
 
-@media only screen and (max-width: 800px) {
+.m-tooltip, .m-m-tooltip {
+  display: none;
+}
+
+@media only screen and (max-width: 900px) {
+  html {font-size: 18px;}
+
   .side-nav {
     flex-flow: row nowrap;
     position: fixed;
@@ -737,17 +745,124 @@ ul {
     background-color: var(--background-color);
     animation: fadeInDown var(--anim-name-length) backwards, bounceInDown 0.5s;
     animation-delay: 0s, 0s;
+    gap: 0;
   }
 
-  .side-nav a {
-    margin-bottom: 15px;
+  .side-nav a {margin-bottom: 15px;}
+
+  .logo, #project-links {display: none !important;}
+
+  #name-grid {justify-items: center;}
+
+  .text-section {
+    margin: auto;
+    width: 500px;
   }
 
-  .logo, #project-links {
-    display: none;
+  .card-cover {
+    grid-template-columns: 1fr;
+    align-content: center;
+    padding: 1em;
+  }
+
+  #studies-logo {height: 12em;}
+
+  .project {
+    width: 500px;
+    margin: auto;
+    margin-top: 7em;
+  }
+
+  #wvum-project img {
+    display: block;
+    width: 100%;
+  }
+
+  .xout {
+    background:rgba(255, 255, 255, 0.2);
+    right: 50px;
+    top: 100px;
+    border-radius: 100%;}
+}
+
+@media only screen and (max-width: 600px) {
+  nav {
+    justify-content: space-evenly;
+    margin-left: 0;
+    gap: 0;
+  }
+
+  @keyframes top-split {
+    0% {transform: translate(0px, 0px);}
+    50% {transform: translate(0px, -50px);}
+    100% {transform: translate(-100px, -50px);}
+  }
+  
+  @keyframes bottom-split {
+    0% {transform: translate(0px, 0px);}
+    50% {transform: translate(0px, -50px);}  
+    100% {transform: translate(-90px, -50px);}
+  }
+  
+  @keyframes rectangle-split {
+    0% {
+      transform: translate(0px, 100px);
+      opacity: 0;
+      height: 100px;
+    }
+    1% {opacity: 1;}
+    50% {
+      transform: translate(0px, 50px);
+      opacity: 1;
+      height: 200px;
+    }
+    100% {
+      transform: translate(-95px, 50px);
+      opacity: 1;
+      height: 200px;
+    }
   }
 
   .text-section {
-    margin: 0 2rem;
+    width: auto;
+    margin: auto 1em;
   }
+
+  .list-container {grid-template-columns: 1fr;}
+
+  .list-container ul:first-child {padding-bottom: 0;}
+
+  .project {
+    width: auto;
+    margin: auto 1em;
+    margin-top: 50px;
+  }
+
+  .project-summary {padding: 1em;}
+
+  .m-tooltip {display: block;}
+
+  .xout {top: 50px;}
+
+}
+
+@media only screen and (max-width: 400px) {
+  html {
+    max-width: 350px;
+  }
+
+  .card {
+    width: 100vw;
+    margin: 1.5em -1em;
+    border-radius: 0;
+  }
+
+  .xout {
+    top: 20px;
+    right: 20px;
+  }
+
+  .m-m-tooltip {display: block;}
+
+  .d-only {display: none;}
 }
